@@ -1,0 +1,82 @@
+=== objectif
+
+- fetch la page ou dl le pdf
+    - recup le lien du pdf
+        - fetch le pdf
+
+========= les librairies
+
+parse page html pour recup lien pdf :  jsoup 
+	doc : https://jsoup.org/cookbook/
+
+read pdf : itextpdf
+	doc : https://api.itextpdf.com/iText/java/7.2.3/
+
+========= lien DOWNLOAD PDF
+
+lien be like
+
+"https://ansm.sante.fr/uploads/2024/06/07/20230915-thesaurus-interactions-medicamenteuses-septembre-2023.pdf"
+
+
+
+=== decoupage
+
+
+
+"https://ansm.sante.fr/uploads/"
+
+AAAA + "/" (date X)
+MM + "/"  (date X)
+JJ + "/"  (date X)
+
+AAAA + MM + JJ        (date Y)
+
+"-thesaurus-interactions-medicamenteuses-"
+
+MOIS_ECRIT_EN_LETTRE + "-"
+
+AAAA + ".pdf"   (date Y)
+
+
+
+=== parse final
+
+
+
+/!\ pas sûr de l'ordre AAAAMMJJ
+
+"https://ansm.sante.fr/uploads/"..AAAA_X.."/"..MM_X.."/"..JJ_X.."/"..AAAA_Y..MM_Y..JJ_Y
+.."-thesaurus-interactions-medicamenteuses-"..MONTH_FULL_Y..YEAR_Y..".pdf"
+
+
+
+===  regex
+
+
+
+https:\/\/ansm\.sante\.fr\/uploads\/
+
+\d{4}\/\d{2}\/\d{2}\/\d{8}
+
+-thesaurus-interactions-medicamenteuses-
+
+(janvier|fevrier|mars|avril|mai|juin|juillet|aout|septembre|octobre|novembre|decembre)
+
+-\d{4}\.pdf
+
+
+
+=== regex final
+
+
+
+^https:\/\/ansm\.sante\.fr\/uploads\/\d{4}\/\d{2}\/\d{2}\/\d{8}-thesaurus-interactions-medicamenteuses-(janvier|fevrier|mars|avril|mai|juin|juillet|aout|septembre|octobre|novembre|decembre)-\d{4}\.pdf$
+
+
+
+=== regex plus tolerant (nom de mois pas fixe)
+
+
+
+^https:\/\/ansm\.sante\.fr\/uploads\/\d{4}\/\d{2}\/\d{2}\/\d{8}-thesaurus-interactions-medicamenteuses-[a-zA-Z]+-\d{4}\.pdf$

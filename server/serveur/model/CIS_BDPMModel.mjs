@@ -1,0 +1,28 @@
+export default class CIS_BDPM{
+    codeCIS
+    denomMedic
+    formePharma
+    voieAdmin
+    statusAdminAMM
+    typeProcAMM
+    etatCommerce
+    dateAMM
+    statusBdm
+    numEU
+    titulaires
+    surveillanceReforce
+    constructor(obj){
+        this.codeCIS=obj.codeCIS
+        this.denomMedic=obj.denomMedic
+        this.formePharma=obj.formePharma
+        this.voieAdmin=obj.voieAdmin
+        this.statusAdminAMM=obj.statusAdminAMM
+        this.typeProcAMM=obj.typeProcAMM
+        this.etatCommerce=obj.etatCommerce
+        this.dateAMM=obj.dateAMM
+        this.status=obj.status
+        this.numEU=obj.status
+        this.titulaires=obj.titulaires
+        this.surveillanceReforce=obj.surveillanceReforce
+    }
+}

@@ -1,0 +1,2 @@
+- Le dossier [app](./app) Contient l'application android
+- Le dossier [server](./server) Contient le serveur NodeJS utilisée par l'application

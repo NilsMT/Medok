@@ -1,0 +1,40 @@
+{
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "chai": "^5.1.2",
+    "cors": "^2.8.5",
+    "csv-parser": "^3.0.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "mongodb": "^6.5.0",
+    "mongodb-memory-server": "^10.1.2",
+    "mongoose": "^8.2.2",
+    "neo4j-driver": "^5.26.0",
+    "sinon": "^19.0.2",
+    "swagger": "^0.0.1",
+    "swagger-autogen": "^2.23.7",
+    "swagger-ui-express": "^5.0.0"
+  },
+  "name": "serveur",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {
+    "@babel/core": "^7.26.7",
+    "@babel/plugin-syntax-import-assertions": "^7.26.0",
+    "@babel/preset-env": "^7.26.7",
+    "babel-jest": "^29.7.0",
+    "jest": "^29.7.0",
+    "mocha": "^11.1.0"
+  },
+  "type": "module",
+  "scripts": {
+    "test": "mocha tests/",
+    "populate": "curl -X GET -i localhost:8080/api/v0/pharmacien/populate && curl -X GET -i localhost:8080/api/v0/CIS_BDPM/populate && curl -X GET -i localhost:8080/api/v0/CIS_CIP/populate && curl -X GET -i localhost:8080/api/v0/CIS_COMPO/populate && curl -X GET -i localhost:8080/api/v0/CIS_CPD/populate && curl -X GET -i localhost:8080/api/v0/CIS_GENER/populate && curl -X GET -i localhost:8080/api/v0/CIS_HAS_ASMR/populate && curl -X GET -i localhost:8080/api/v0/CIS_HAS_SMR/populate && curl -X GET -i localhost:8080/api/v0/HAS_LIENSPAGECT/populate",
+    "err": "echo oui",
+    "start": "node ./server.mjs",
+    "kill": "kill $(lsof -t -i:8080)"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

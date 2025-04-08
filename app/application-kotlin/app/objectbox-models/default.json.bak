@@ -1,0 +1,110 @@
+{
+  "_note1": "KEEP THIS FILE! Check it into a version control system (VCS) like git.",
+  "_note2": "ObjectBox manages crucial IDs for your object model. See docs for details.",
+  "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
+  "entities": [
+    {
+      "id": "2:4303582691186243061",
+      "lastPropertyId": "2:5991383641713698887",
+      "name": "Medicine",
+      "properties": [
+        {
+          "id": "1:8405767678016146514",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:5991383641713698887",
+          "name": "name",
+          "type": 9
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "3:337538988262715212",
+      "lastPropertyId": "3:8719985823811409089",
+      "name": "PrescribedMedicine",
+      "properties": [
+        {
+          "id": "1:1135289251610261951",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:5727708504796990373",
+          "name": "posology",
+          "type": 9
+        },
+        {
+          "id": "3:8719985823811409089",
+          "name": "medicineId",
+          "indexId": "1:4622970815159673748",
+          "type": 11,
+          "flags": 520,
+          "relationTarget": "Medicine"
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "4:4472094032267208380",
+      "lastPropertyId": "5:1785217248302299439",
+      "name": "SimplePrescription",
+      "properties": [
+        {
+          "id": "1:2678215870039232172",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:4346808807257093158",
+          "name": "doctorName",
+          "type": 9
+        },
+        {
+          "id": "3:5911444865454073088",
+          "name": "doctorPhoneNumber",
+          "type": 9
+        },
+        {
+          "id": "4:909476502728825498",
+          "name": "address",
+          "type": 9
+        },
+        {
+          "id": "5:1785217248302299439",
+          "name": "redactionDate",
+          "type": 9
+        }
+      ],
+      "relations": [
+        {
+          "id": "1:8489786245021956089",
+          "name": "medicines",
+          "targetId": "3:337538988262715212"
+        }
+      ]
+    }
+  ],
+  "lastEntityId": "4:4472094032267208380",
+  "lastIndexId": "1:4622970815159673748",
+  "lastRelationId": "1:8489786245021956089",
+  "lastSequenceId": "0:0",
+  "modelVersion": 5,
+  "modelVersionParserMinimum": 5,
+  "retiredEntityUids": [
+    2044785857466485391
+  ],
+  "retiredIndexUids": [],
+  "retiredPropertyUids": [
+    6286494859319547795,
+    3811687684704594802,
+    4471643482665505971
+  ],
+  "retiredRelationUids": [],
+  "version": 1
+}
